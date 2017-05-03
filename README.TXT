@@ -6,9 +6,9 @@ alles, was er/sie wissen muss. Üblicherweise sollte der Kommentar
 zumindest die folgenden Angaben umfassen:
 ------------------------------------------------------------------------
 
-PROJEKTBEZEICHNUNG:
-PROJEKTZWECK:
+PROJEKTBEZEICHNUNG: Jump'N'Run
+PROJEKTZWECK: Informatik-Projekt
 VERSION oder DATUM:
-WIE IST DAS PROJEKT ZU STARTEN:
-AUTOR(EN):
+WIE IST DAS PROJEKT ZU STARTEN: 
+AUTOR(EN): Luka Ratkovic, Paul Ober, Annika Schöll, Tobias Belm, Kilian Gerberding, Maximilian Hänsel
 BENUTZERHINWEISE:
