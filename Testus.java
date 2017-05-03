@@ -16,7 +16,8 @@ public class Testus
     public Testus()
     {
         // initialise instance variables
-        x = 0;
+        x = 2;
+        
     }
 
     /**
