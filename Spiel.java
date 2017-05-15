@@ -44,11 +44,11 @@ public class Spiel extends Game implements Ticker
    Boden5.passivMachen();
    Boden5.faktorSetzen(3);
    
-   Boden5 = new Figur(0, 500, "Stone90x5.eaf");
-   Boden5.passivMachen();
-   Boden5.faktorSetzen(3);
+   Boden6 = new Figur(0, 500, "Stone90x5.eaf");
+   Boden6.passivMachen();
+   Boden6.faktorSetzen(3);
    
-   wurzel.add(Hintergrundbild1, Hintergrundbild2, Hintergrundbild3, figur, 
+   wurzel.add(Hintergrundbild1, Hintergrundbild2, Hintergrundbild3, figur,
    Boden1, Boden2, Boden3, Boden4, Boden5, Boden6);
    manager.anmelden(this, 50);
    
