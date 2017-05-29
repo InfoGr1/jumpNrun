@@ -1,70 +1,54 @@
 import ea.*;
 import java.util.ArrayList;
 
-public class Spiel extends Game implements Ticker
+public class Spiel extends Game
 {
-    private Bild Hintergrundbild1;
-    private Bild Hintergrundbild2;
-    private Bild Hintergrundbild3;
+    private Bild Hintergrundbild;
+   
     private Figur figurlaufen;
     private float rechts;
     private Figur Boden;
     private Bild Kiste1;
     private Bild Kiste2;
+    private Bild[] Hinterfeld;
     private Figur[] Bodenfeld;
     
    public Spiel(){
    super(1080, 720, "Fenstertitel");
    rechts = 0;
+   Bodenfeld = new Figur[50];
+   Hinterfeld = new Bild[50];
   
-   Hintergrundbild1 = new Bild(0, 0, "BackgroundSpace1.png");
-   Hintergrundbild2 = new Bild(1080, 0, "BackgroundSpace1.png");
-   Hintergrundbild3 = new Bild(2160, 0, "BackgroundSpace1.png");
    
-   figurlaufen = new Figur(250, 20, "laufen.eaf");
+   
+   figurlaufen = new Figur(540, 450, "laufen.eaf");
    figurlaufen.aktivMachen();
    figurlaufen.faktorSetzen(4);
+   cam.fokusSetzen(figurlaufen);
    
-   for(int i=0; i<10; i++){
-       Boden = new Boden(i*90, 500, "Stone90x5.eaf");
+   
+   
+   wurzel.add(figurlaufen);
+   for(int u=0; u<1; u++){
+       for(int z=0; z<6; z++){
+       Hintergrundbild = new Bild(z*1080, u*720, "BackgroundSpace1");
+       Hinterfeld[
+       
+    }
     }
    
-   
-   Kiste1 = new Bild(500, 470, 200, "KisteStyle20x20.png");
-   Kiste1.passivMachen();
-   
-   Kiste2 = new Bild(500, 440, 200, "KisteStyle20x20.png");
-   Kiste2.passivMachen();
-   
-   wurzel.add(Hintergrundbild1, Hintergrundbild2, Hintergrundbild3, figurlaufen,
-   Boden, Kiste1, Kiste2);
-   manager.anmelden(this, 10);
-   
+   for(int i=0; i<5; i++){
+       Boden = new Figur(i*270, 720, "Stone90x5.eaf");
+       Boden.faktorSetzen(3);
+       Boden.passivMachen();
+       Bodenfeld[i] = Boden;
+       wurzel.add(Bodenfeld[i]);
+    }
+    
 }
 
-public void tick(){
-  rechts = rechts + 0.5f;
-  Hintergrundbild1.verschieben(-0.5f, 0);
-  Hintergrundbild2.verschieben(-0.5f, 0);
-  Hintergrundbild3.verschieben(-0.5f, 0);
-  Kiste1.verschieben(-0.5f, 0);
-  Kiste2.verschieben(-0.5f, 0);
-  if(figurlaufen.schneidet(Kiste1)){
-      zuruecksetzen();
-    }
-  if(figurlaufen.schneidet(Kiste2)){
-      zuruecksetzen();
-    }
-}
 
-public void zuruecksetzen(){
-  Hintergrundbild1.verschieben(rechts, 0);
-  Hintergrundbild2.verschieben(rechts, 0);
-  Hintergrundbild3.verschieben(rechts, 0);
-  Kiste1.verschieben(rechts, 0);
-  Kiste2.verschieben(rechts, 0);
-  rechts = 0;
-}
+
 
 
 
