@@ -56,12 +56,16 @@ public class Spiel extends Game implements Ticker
         Endboss.animationsGeschwindigkeitSetzen(1000);
 
         wurzel.add(figurlaufen, flamme, Endboss);
-        manager.anmelden(this, 200);
+        manager.anmelden(this, 20);
     }
 
     public void tick(){
-        
-        
+        if(tasteGedrueckt(3)){
+            figurlaufen.verschieben(2, 0);
+        }
+        if(tasteGedrueckt(22)){
+            figurlaufen.sprung(8);
+        }
         
     }
 
