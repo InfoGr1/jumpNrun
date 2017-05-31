@@ -1,7 +1,7 @@
 import ea.*;
 import java.util.ArrayList;
 
-public class Spiel extends Game
+public class Spiel extends Game implements Ticker
 {
     private Bild Hintergrundbild;
 
@@ -12,12 +12,16 @@ public class Spiel extends Game
     private Bild Kiste2;
     private Bild[] Hinterfeld;
     private Figur[] Bodenfeld;
+    private Figur flamme;
+    private Figur Endboss;
+    
 
     public Spiel(){
         super(1080, 720, "Fenstertitel");
         rechts = 0;
         Bodenfeld = new Figur[50];
         Hinterfeld = new Bild[50];
+        
 
         int z;
         for(z=0;z<6; z++){
@@ -43,11 +47,23 @@ public class Spiel extends Game
         figurlaufen.aktivMachen();
         figurlaufen.faktorSetzen(4);
         cam.fokusSetzen(figurlaufen);
+        
+        flamme = new Figur(700, 600, "flamme10x10.eaf");
+        flamme.drehenAbsolut(270);
+        
+        Endboss = new Figur(900, 600, "Endbosz.eaf");
+        Endboss.faktorSetzen(3);
+        Endboss.animationsGeschwindigkeitSetzen(1000);
 
-        wurzel.add(figurlaufen);
+        wurzel.add(figurlaufen, flamme, Endboss);
+        manager.anmelden(this, 200);
     }
 
-
+    public void tick(){
+        
+        
+        
+    }
 
     public void tasteReagieren(int tastencode){
         switch(tastencode){
