@@ -1,1 +1,1 @@
-[Wed May 31 13:52:13 CEST 2017][ERROR] Kritischer Fehler im Ticker: Eine Ausnahme wurde nicht abgefangen. Der Ticker wurde angehalten. Die folgende StackTrace sollte dir weitere Informationen liefern. (Manager.java:199)
+[Mon Jun 19 08:41:35 CEST 2017][ERROR] Das Bild konnte nicht geladen werden: KisteStyle60x60 (ImageLoader.java:51)

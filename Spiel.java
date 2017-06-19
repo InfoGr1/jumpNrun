@@ -12,8 +12,7 @@ public class Spiel extends Game implements Ticker
     private Bild Kiste2;
     private Bild[] Hinterfeld;
     private Figur[] Bodenfeld;
-    private Figur flamme;
-    private Figur Endboss;
+    
     
 
     public Spiel(){
@@ -36,27 +35,27 @@ public class Spiel extends Game implements Ticker
         }
 
         for(int i=0; i<20; i++){
-            Boden = new Figur(i*270, 720, "Stone90x5.eaf");
+            Boden = new Figur(i*270, 720, "Stone270x5.eaf");
             Boden.faktorSetzen(3);
             Boden.passivMachen();
             Bodenfeld[i] = Boden;
             wurzel.add(Bodenfeld[i]);
         }
 
-        figurlaufen = new Figur(540, 100, "laufen.eaf");
+        figurlaufen = new Figur(540, 500, "laufen.eaf");
         figurlaufen.aktivMachen();
         figurlaufen.faktorSetzen(4);
         cam.fokusSetzen(figurlaufen);
         
-        flamme = new Figur(700, 600, "flamme10x10.eaf");
-        flamme.drehenAbsolut(270);
-        
-        Endboss = new Figur(900, 600, "Endbosz.eaf");
-        Endboss.faktorSetzen(3);
-        Endboss.animationsGeschwindigkeitSetzen(1000);
+        Kiste1 = new Bild(660, 660, "KisteStyle60x60.png");
+        Kiste1.passivMachen();
 
-        wurzel.add(figurlaufen, flamme, Endboss);
-        manager.anmelden(this, 20);
+        wurzel.add(figurlaufen, Kiste1);
+        manager.anmelden(this, 10);
+    }
+    
+    public void zuruecksetzen(){
+        figurlaufen.positionSetzen(540, 500);
     }
 
     public void tick(){
@@ -66,16 +65,20 @@ public class Spiel extends Game implements Ticker
         if(tasteGedrueckt(22)){
             figurlaufen.sprung(8);
         }
-        
+        if(tasteGedrueckt(0)){
+            figurlaufen.verschieben(-2, 0);
+        }
+        if(figurlaufen.getY()>2000){
+            zuruecksetzen();
+        }
+        if(figurlaufen.schneidet(Kiste1)){
+            zuruecksetzen();
+        }
     }
 
     public void tasteReagieren(int tastencode){
-        switch(tastencode){
-
-            case Taste.OBEN: figurlaufen.sprung(8); break;
-            case Taste.UNTEN: figurlaufen.verschieben(+0, +10); break;
-            case Taste.RECHTS: figurlaufen.verschieben(+10, +0); break;
-            case Taste.LINKS: figurlaufen.verschieben(-10, +0); break;
-        }
+       
     }
+    
+    
 }
