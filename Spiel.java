@@ -85,8 +85,16 @@ public class Spiel extends Game implements Ticker
     }
 
     public void tick(){
-        
-        if(tasteGedrueckt(3)){
+        if(figurlaufen.schneidet(Kiste1)||figurlaufen.schneidet(Kiste2)||figurlaufen.schneidet(Kiste3)
+        ||figurlaufen.schneidet(Treppe1)||figurlaufen.schneidet(Treppe3)||figurlaufen.schneidet(Treppe6)
+        ||figurlaufen.schneidet(Treppe8)||figurlaufen.schneidet(Treppe9)||figurlaufen.schneidet(Treppe10)){
+            halt = true;
+            
+        }else{
+            halt = false;
+            
+        }
+        if(tasteGedrueckt(3)&&halt==false){
             figurlaufen.verschieben(2, 0);
         }
         if(tasteGedrueckt(22)){
