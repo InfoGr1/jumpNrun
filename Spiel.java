@@ -100,7 +100,7 @@ public class Spiel extends Game implements Ticker
         if(tasteGedrueckt(22)){
             figurlaufen.sprung(8);
         }
-        if(tasteGedrueckt(0)){
+        if(tasteGedrueckt(0)&&halt==false){
             figurlaufen.verschieben(-2, 0);
         }
         if(figurlaufen.getY()>2000){
