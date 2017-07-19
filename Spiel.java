@@ -19,6 +19,12 @@ public class Spiel extends Game implements Ticker
     private Bild Kiste7;
     private Bild Kiste8;
     private Bild Kiste9;
+    private Bild Kiste10;
+    private Bild Kiste11;
+    private Bild Kiste12;
+    private Bild Kiste13;
+    private Bild Kiste14;
+    private Bild Kiste15;
     private Bild Treppe1;
     private Bild Treppe2;
     private Bild Treppe3;
@@ -40,6 +46,7 @@ public class Spiel extends Game implements Ticker
     private Bild Treppe19;
     private Bild Treppe20;
     private Bild Treppe21;
+
     private Figur Boden1;
     private Figur Boden2;
 
@@ -72,6 +79,14 @@ public class Spiel extends Game implements Ticker
         Bodenfeld[6].neutralMachen();
         wurzel.entfernen(Bodenfeld[8]);
         Bodenfeld[8].neutralMachen();
+        wurzel.entfernen(Bodenfeld[9]);
+        Bodenfeld[9].neutralMachen();
+        wurzel.entfernen(Bodenfeld[10]);
+        Bodenfeld[10].neutralMachen();
+        wurzel.entfernen(Bodenfeld[11]);
+        Bodenfeld[11].neutralMachen();
+        wurzel.entfernen(Bodenfeld[12]);
+        Bodenfeld[12].neutralMachen();
 
         Kiste1 = new Hindernisse(660, 660, "KisteStyle60x60.png");
         Kiste1.neutralMachen();
@@ -91,6 +106,12 @@ public class Spiel extends Game implements Ticker
         Kiste8.neutralMachen();
         Kiste9 = new Hindernisse(2150, 660, "KisteStyle60x60.png");
         Kiste9.neutralMachen();
+        Kiste10 = new Hindernisse(2680, 640, "KisteStyle60x60.png");
+        Kiste11 = new Hindernisse(2810, 640, "KisteStyle60x60.png");
+        Kiste12 = new Hindernisse(2920, 700, "KisteStyle60x60.png");
+        Kiste13 = new Hindernisse(3040, 620, "KisteStyle60x60.png");
+        Kiste14 = new Hindernisse(3160, 820, "KisteStyle60x60.png");
+        Kiste15 = new Hindernisse(3340, 720, "KisteStyle60x60.png");
         Treppe1 = new Hindernisse(1180, 680, "Treppenstufe50x40.png");
         Treppe2 = new Hindernisse(1230, 680, "Treppenstufe50x40.png");
         Treppe3 = new Hindernisse(1230, 640, "Treppenstufe50x40.png");
@@ -126,7 +147,8 @@ public class Spiel extends Game implements Ticker
         cam.fokusSetzen(figurlaufen);
 
         wurzel.add(figurlaufen, Kiste1, Kiste2, 
-            Kiste3, Kiste4, Kiste5, Kiste6, Kiste7, Kiste8, Kiste9, 
+            Kiste3, Kiste4, Kiste5, Kiste6, Kiste7, Kiste8, Kiste9, Kiste10, Kiste11, Kiste12,
+            Kiste13, Kiste14, Kiste15,
             Treppe1, Treppe2, Treppe3, Treppe4, Treppe5, Treppe6, Treppe7, 
             Treppe8, Treppe9, Treppe10, Treppe11, Treppe12, Treppe13, Treppe14, 
             Treppe15, Treppe16, Treppe17, Treppe18, Treppe19, Treppe20, Treppe21, 
@@ -152,34 +174,33 @@ public class Spiel extends Game implements Ticker
             figurlaufen.verschieben(2, 0);
         }
         if(tasteGedrueckt(22)){
-           
-                Kiste1.passivMachen();
-                Kiste2.passivMachen();
-                Kiste3.passivMachen();
-                Kiste5.passivMachen();
-                Kiste6.passivMachen();
-                Kiste7.passivMachen();
-                Kiste8.passivMachen();
-                Kiste9.passivMachen();
-                figurlaufen.sprung(8);
-           
-            }
 
-        
+            Kiste1.passivMachen();
+            Kiste2.passivMachen();
+            Kiste3.passivMachen();
+            Kiste5.passivMachen();
+            Kiste6.passivMachen();
+            Kiste7.passivMachen();
+            Kiste8.passivMachen();
+            Kiste9.passivMachen();
+            figurlaufen.sprung(8);
+
+        }
+
         if(tasteGedrueckt(0)&&halt==false){
             figurlaufen.verschieben(-2, 0);
         }
         if(figurlaufen.getY()>2000){
             zuruecksetzen();
         }
-        
+
         boolean flag= false;
         for(int p=0; p<20; p++){
             if(figurlaufen.stehtAuf(Bodenfeld[p])){
                 flag = true;
             }
         }
-        
+
         if(flag==true){
             Kiste1.neutralMachen();
             Kiste2.neutralMachen();
@@ -189,7 +210,7 @@ public class Spiel extends Game implements Ticker
             Kiste7.neutralMachen();
             Kiste8.neutralMachen();
             Kiste9.neutralMachen();
-            
+
         }
 
     }
