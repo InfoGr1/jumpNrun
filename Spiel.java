@@ -205,7 +205,6 @@ public class Spiel extends Game implements Ticker
         figurlaufen.faktorSetzen(4);
         cam.fokusSetzen(figurlaufen);
 
-       
         //540, 500
 
         figur2 = new Figur(4700, 500, "geistr.eaf");
@@ -218,11 +217,11 @@ public class Spiel extends Game implements Ticker
 
         
         flamme1 = new Figur(4300, 620,"Flamme10x10.eaf");
-            flamme1.aktivMachen();
+            flamme1.passivMachen();
             flamme1.faktorSetzen(2);
             
            flamme2= new Figur(4300, 700,"Flamme10x10.eaf");
-           flamme2.aktivMachen();
+           flamme2.passivMachen();
             flamme2.faktorSetzen(2);
             
             
