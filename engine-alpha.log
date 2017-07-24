@@ -1,1 +1,8 @@
-[Mon Jul 17 08:59:33 CEST 2017][ERROR] Aktivobjekte unterstützen leider keinen Beeinflussbarkeit. Dafür gibt es die Newton-Körper! (Gravitator.java:338)
+[Mon Jul 24 08:31:47 CEST 2017][ERROR] Fehler beim Lesen der Datei. Existiert die Datei mit diesem Namen wirklich?
+\\ADS\schueler$\home\RATKOVICLU\Q11\t\geistr.eaf (DateiManager.java:678)
+[Mon Jul 24 08:31:47 CEST 2017][ERROR] Kritischer Fehler im Ticker: Eine Ausnahme wurde nicht abgefangen. Der Ticker wurde angehalten. Die folgende StackTrace sollte dir weitere Informationen liefern. (Manager.java:199)
+[Mon Jul 24 08:31:47 CEST 2017][ERROR] Kritischer Fehler im Ticker: Eine Ausnahme wurde nicht abgefangen. Der Ticker wurde angehalten. Die folgende StackTrace sollte dir weitere Informationen liefern. (Manager.java:199)
+[Mon Jul 24 08:32:59 CEST 2017][ERROR] Fehler beim Lesen der Datei. Existiert die Datei mit diesem Namen wirklich?
+\\ADS\schueler$\home\RATKOVICLU\Q11\t\geistr.eaf (DateiManager.java:678)
+[Mon Jul 24 08:33:59 CEST 2017][ERROR] Fehler beim Lesen der Datei. Existiert die Datei mit diesem Namen wirklich?
+\\ADS\schueler$\home\RATKOVICLU\Q11\t\geistr.eaf (DateiManager.java:678)
